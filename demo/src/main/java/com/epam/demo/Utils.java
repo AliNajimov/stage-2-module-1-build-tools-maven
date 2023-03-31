@@ -10,8 +10,12 @@ public class Utils {
             return false;
         }
         for (String s : args) {
-            if (!StringUtils.isPositiveNumber(s)) {
+            if (s.isEmpty()) {
                 return false;
+            }else {
+                if (!StringUtils.isPositiveNumber(s)) {
+                    return false;
+                }
             }
         }
         return true;
