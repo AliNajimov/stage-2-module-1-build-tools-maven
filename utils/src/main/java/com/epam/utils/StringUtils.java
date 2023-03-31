@@ -2,10 +2,10 @@ package com.epam.utils;
 
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-        //code!
-        if (str == null || str.isEmpty()) {
+        if(str == null){
             return false;
         }
-        return Double.parseDouble(str) > 0 && str.matches("\\d+");
+        double v = Double.parseDouble(str);
+        return v>0;
     }
 }

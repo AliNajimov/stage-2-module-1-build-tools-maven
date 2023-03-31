@@ -6,18 +6,9 @@ import java.util.List;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-        if (args == null || args.isEmpty()) {
+        if (args == null){
             return false;
         }
-        for (String s : args) {
-            if (s.isEmpty()) {
-                return false;
-            }else {
-                if (!StringUtils.isPositiveNumber(s)) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return args.stream().allMatch(a ->a.matches("\\d+") && Double.parseDouble(a)>0);
     }
 }
